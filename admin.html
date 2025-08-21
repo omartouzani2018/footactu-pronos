@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin - FootActu Pronos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Administration</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="pronos.html">Pronostics</a>
+            <a href="articles.html">Articles</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Ajouter un article</h2>
+            <form id="article-form">
+                <input type="text" id="title" placeholder="Titre" required>
+                <textarea id="content" placeholder="Contenu" required></textarea>
+                <input type="text" id="image" placeholder="URL de l'image" required>
+                <button type="submit">Enregistrer</button>
+            </form>
+        </section>
+    </main>
+    <script>
+        document.getElementById('article-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const data = {
+                title: document.getElementById('title').value,
+                content: document.getElementById('content').value,
+                image: document.getElementById('image').value
+            };
+            fetch('/api/articles', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(data)
+            }).then(res => {
+                if (res.ok) {
+                    alert('Article ajouté');
+                    this.reset();
+                }
+            });
+        });
+    </script>
+</body>
+</html>

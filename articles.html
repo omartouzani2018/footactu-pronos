@@ -18,22 +18,7 @@
         </nav>
     </header>
     <main>
-        <article>
-            <h2>Le PSG débute la saison en force</h2>
-            <p>
-                Le Paris Saint-Germain a lancé sa saison de Ligue 1 avec une victoire impressionnante contre l'Olympique Lyonnais. 
-                Kylian Mbappé a marqué un doublé, tandis que la nouvelle recrue, Lucas Hernandez, a signé une belle prestation en défense.
-                Avec ce résultat, le PSG prend la tête du classement dès la première journée.
-            </p>
-        </article>
-        <article>
-            <h2>Marseille accroché à domicile</h2>
-            <p>
-                L’Olympique de Marseille n’a pas su profiter de son avantage à domicile face à Nice. 
-                Malgré l’ouverture du score par Aubameyang, les Niçois ont égalisé en seconde période. 
-                Les supporters attendent une réaction lors du prochain match face à Rennes.
-            </p>
-        </article>
+        <div id="articles-container"></div>
         <section>
             <h2>Classement provisoire Ligue 1</h2>
             <table border="1" cellpadding="8" style="border-collapse: collapse; margin: 0 auto;">
@@ -107,5 +92,21 @@
     <footer>
         <p>&copy; 2025 FootActu Pronos</p>
     </footer>
+    <script>
+        fetch('/api/articles')
+            .then(res => res.json())
+            .then(articles => {
+                const container = document.getElementById('articles-container');
+                articles.forEach(article => {
+                    const articleEl = document.createElement('article');
+                    articleEl.innerHTML = `
+                        <h2>${article.title}</h2>
+                        <img src="${article.image}" alt="${article.title}">
+                        <p>${article.content}</p>
+                    `;
+                    container.appendChild(articleEl);
+                });
+            });
+    </script>
 </body>
 </html>
