@@ -31,6 +31,18 @@ main {
 section {
     margin-bottom: 32px;
 }
+.gallery {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.gallery img {
+    width: 30%;
+    border-radius: 8px;
+    object-fit: cover;
+}
 
 form input,
 form textarea,
