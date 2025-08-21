@@ -2,49 +2,202 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>FootActu Pronos</title>
-    <link rel="stylesheet" href="style.css">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1564073570878035"
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FootNews - Actualités Football</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1564073570878035"
      crossorigin="anonymous"></script>
 </head>
 <body>
-    <header>
-        <h1>FootActu Pronos</h1>
-        <nav>
-            <a href="index.html">Accueil</a>
-            <a href="pronos.html">Pronostics</a>
-            <a href="articles.html">Articles</a>
-        </nav>
-    </header>
-    <main>
-        <section>
-            <h2>Bienvenue sur FootActu Pronos !</h2>
-            <p>Partagez et découvrez les meilleurs pronostics football pour tous les matchs à venir.</p>
-        </section>
- <section id="galerie">
-            <h2>Galerie</h2>
-            <div class="gallery">
-                <img src="stadium-football-match-stockcake.jpg" alt="Match de football">
-                <img src="stadium-football-match-stockcake.jpg" alt="Stade de football">
-                <img src="stadium-football-match-stockcake.jpg" alt="Joueur de football">
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">⚽</span>
+                    <span class="logo-text">FootNews</span>
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <a href="#" class="nav-link active" data-section="accueil">Accueil</a>
+                    <a href="#" class="nav-link" data-section="matchs">Matchs</a>
+                    <a href="#" class="nav-link" data-section="transferts">Transferts</a>
+                    <a href="#" class="nav-link" data-section="classements">Classements</a>
+                </nav>
+                
+                <div class="header-actions">
+                    <div class="search-container">
+                        <input type="text" placeholder="Rechercher..." class="search-input" id="searchInput">
+                        <button class="search-btn">🔍</button>
+                    </div>
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">☰</button>
+                </div>
             </div>
-        </section>
-        <section id="about">
-            <h2>À propos de FootActu Pronos</h2>
-            <p>FootActu Pronos rassemble les passionnés de football autour des pronostics, des analyses et des dernières nouvelles du ballon rond. Rejoignez la communauté pour partager vos prévisions et vibrer ensemble au rythme des compétitions.</p>
-        </section>
-        <section id="actualites">
-            <h2>Actualités</h2>
-            <div id="actualites-container"></div>
-        </section>
-        <section>
-            <h2>Pronostics de la communauté</h2>
-            <ul id="pronos-list"></ul>
-        </section>
+        </div>
+    </header>
+
+    <!-- News Ticker -->
+    <div class="news-ticker-container">
+        <div class="news-ticker">
+            <span class="ticker-item">🔥 Mbappé marque un triplé face à Barcelone</span>
+            <span class="ticker-item">⚡ Transfert surprise : Haaland vers le Real Madrid ?</span>
+            <span class="ticker-item">🏆 PSG remporte la Ligue des Champions</span>
+            <span class="ticker-item">📈 Benzema prolonge au Real Madrid</span>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <div class="content-grid">
+                <!-- Left Column -->
+                <div class="main-column">
+                    <!-- Accueil Section -->
+                    <section id="accueil-section" class="content-section active">
+                        <!-- Hero Section -->
+                        <div class="hero-section">
+                            <div class="hero-image">
+                                <img src="arsenal-football-team.png" alt="Match de football">
+                            </div>
+                            <div class="hero-content">
+                                <span class="hero-category">Match en direct</span>
+                                <h1 class="hero-title">PSG vs Real Madrid : Le choc des titans en Ligue des Champions</h1>
+                                <p class="hero-description">Un match épique qui s'annonce au Parc des Princes avec les plus grandes stars du football mondial.</p>
+                                <div class="hero-meta">
+                                    <span class="hero-date">Il y a 2 heures</span>
+                                    <span class="hero-author">Par Jean Dupont</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- News Grid -->
+                        <div class="news-section">
+                            <div class="section-header">
+                                <h2 class="section-title">Dernières actualités</h2>
+                                <div class="filter-buttons">
+                                    <button class="filter-btn active" data-filter="all">Tout</button>
+                                    <button class="filter-btn" data-filter="ligue1">Ligue 1</button>
+                                    <button class="filter-btn" data-filter="international">International</button>
+                                    <button class="filter-btn" data-filter="transferts">Transferts</button>
+                                </div>
+                            </div>
+                            
+                            <div class="news-grid" id="newsGrid">
+                                <!-- News items will be populated by JavaScript -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- Matchs Section -->
+                    <section id="matchs-section" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Matchs du jour</h2>
+                        </div>
+                        <div class="matches-container" id="matchesContainer">
+                            <!-- Matches will be populated by JavaScript -->
+                        </div>
+                    </section>
+
+                    <!-- Transferts Section -->
+                    <section id="transferts-section" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Mercato & Transferts</h2>
+                        </div>
+                        <div class="transfers-container" id="transfersContainer">
+                            <!-- Transfers will be populated by JavaScript -->
+                        </div>
+                    </section>
+
+                    <!-- Classements Section -->
+                    <section id="classements-section" class="content-section">
+                        <div class="section-header">
+                            <h2 class="section-title">Classements</h2>
+                        </div>
+                        <div class="standings-container" id="standingsContainer">
+                            <!-- Standings will be populated by JavaScript -->
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Sidebar -->
+                <aside class="sidebar">
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Classement Ligue 1</h3>
+                        <div class="standings-table" id="sidebarStandings">
+                            <!-- Standings will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Meilleurs buteurs</h3>
+                        <div class="top-scorers" id="topScorers">
+                            <!-- Top scorers will be populated by JavaScript -->
+                        </div>
+                    </div>
+
+                    <div class="sidebar-section">
+                        <h3 class="sidebar-title">Prochains matchs</h3>
+                        <div class="upcoming-matches" id="upcomingMatches">
+                            <!-- Upcoming matches will be populated by JavaScript -->
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </div>
     </main>
-    <footer>
-        <p>&copy; 2025 FootActu Pronos</p>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <span class="logo-icon">⚽</span>
+                        <span class="logo-text">FootNews</span>
+                    </div>
+                    <p class="footer-description">Votre source d'actualités football en temps réel</p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Navigation</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Accueil</a></li>
+                        <li><a href="#">Matchs</a></li>
+                        <li><a href="#">Transferts</a></li>
+                        <li><a href="#">Classements</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Ligues</h4>
+                    <ul class="footer-links">
+                        <li><a href="#">Ligue 1</a></li>
+                        <li><a href="#">Premier League</a></li>
+                        <li><a href="#">La Liga</a></li>
+                        <li><a href="#">Serie A</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Suivez-nous</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">📘</a>
+                        <a href="#" class="social-link">🐦</a>
+                        <a href="#" class="social-link">📷</a>
+                        <a href="#" class="social-link">📺</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 FootNews. Tous droits réservés.</p>
+            </div>
+        </div>
     </footer>
-    <script src="app.js"></script>
+
+    <script src="script.js"></script>
 </body>
 </html>
