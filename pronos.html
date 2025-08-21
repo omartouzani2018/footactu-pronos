@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Pronostics - FootActu Pronos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>FootActu Pronos</h1>
+        <nav>
+            <a href="index.html">Accueil</a>
+            <a href="pronos.html">Pronostics</a>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Proposer un pronostic</h2>
+            <form id="prono-form">
+                <input type="text" id="match" placeholder="Match (ex: PSG - OM)" required>
+                <input type="text" id="prono" placeholder="Votre pronostic (ex: 2-1)" required>
+                <button type="submit">Envoyer</button>
+            </form>
+        </section>
+        <section>
+            <h2>Pronostics de la communauté</h2>
+            <ul id="pronos-list"></ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 FootActu Pronos</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+</html>
