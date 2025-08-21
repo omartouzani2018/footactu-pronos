@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "title": "Nouveau transfert au PSG",
+    "content": "Le PSG annonce l’arrivée d’un nouvel attaquant vedette pour la saison 2025-2026.",
+    "image": "images/actu1.jpg"
+  },
+  {
+    "id": 2,
+    "title": "L’OM prépare la Ligue des Champions",
+    "content": "L’Olympique de Marseille entame sa préparation estivale avec un stage intensif en Espagne.",
+    "image": "images/actu2.jpg"
+  }
+]

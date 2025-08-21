@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     const form = document.getElementById('prono-form');
     const pronosList = document.getElementById('pronos-list');
+    const actualitesContainer = document.getElementById('actualites-container');
 
     // Load pronos from localStorage
     function loadPronos() {
@@ -28,4 +29,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     loadPronos();
+
+    // Load articles
+    if (actualitesContainer) {
+        fetch('/api/articles')
+            .then(res => res.json())
+            .then(articles => {
+                actualitesContainer.innerHTML = '';
+                articles.forEach(article => {
+                    const div = document.createElement('div');
+                    div.className = 'actualite';
+                    div.innerHTML = `
+                        <img src="${article.image}" alt="${article.title}">
+                        <h3>${article.title}</h3>
+                        <p>${article.content}</p>
+                    `;
+                    actualitesContainer.appendChild(div);
+                });
+            });
+    }
 });

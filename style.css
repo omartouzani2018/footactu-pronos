@@ -3,34 +3,44 @@ body {
     background: #f8f9fa;
     margin: 0;
     padding: 0;
+    color: #333;
 }
 
 header {
     background: #2e7d32;
     color: #fff;
-    padding: 16px 0;
-    text-align: center;
+    padding: 16px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
 nav a {
     color: #fff;
     margin: 0 10px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 main {
     padding: 24px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 section {
     margin-bottom: 32px;
 }
 
-form input, form button {
+form input,
+form textarea,
+form button {
     padding: 8px;
     margin: 4px 0;
     border-radius: 4px;
     border: 1px solid #ccc;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 form button {
@@ -38,6 +48,50 @@ form button {
     color: #fff;
     border: none;
     cursor: pointer;
+}
+
+.actualite {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.actualite img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.actualite h3 {
+    margin: 16px;
+}
+
+.actualite p {
+    margin: 0 16px 16px;
+}
+
+#articles-container article {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+#articles-container article img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+#articles-container article h2 {
+    margin: 16px;
+}
+
+#articles-container article p {
+    margin: 0 16px 16px;
 }
 
 ul#pronos-list {
@@ -51,4 +105,4 @@ ul#pronos-list li {
     padding: 12px;
     border-radius: 4px;
     box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-} 
+}
